@@ -1,0 +1,21 @@
+# PTR Lab
+
+This is a repository for the PTR Lab project, which involves tasks related to functional programming and the actor model using Elixir.
+
+## Installation
+
+1. Install Elixir: Follow the instructions [here](https://elixir-lang.org/install.html).
+2. Clone this repository: `git clone https://github.com/WarlichX/PTR_Lab.git`
+3. Navigate to the project directory: `cd PTR_Lab`
+
+## Usage
+
+Run the scripts with the command `elixir script_name.exs`.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
