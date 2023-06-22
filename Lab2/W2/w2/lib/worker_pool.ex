@@ -1,24 +1,16 @@
 defmodule WorkerPool do
-  use Supervisor
+  use DynamicSupervisor
 
   def start_link(_) do
-    Supervisor.start_link(__MODULE__, :ok, name: __MODULE__)
+    DynamicSupervisor.start_link(__MODULE__, nil, name: __MODULE__)
   end
 
-  def init(:ok) do
-    children = [
-      :poolboy.child_spec(:worker_pool, worker_pool_config(), [])
-    ]
-
-    Supervisor.init(children, strategy: :one_for_one)
+  def init(_) do
+    DynamicSupervisor.init(strategy: :one_for_one)
   end
 
-  defp worker_pool_config do
-    [
-      {:name, {:local, :worker_pool}},
-      {:worker_module, TweetPrinter},
-      {:size, 3},
-      {:max_overflow, 0}
-    ]
+  def start_worker do
+    spec = {Printer, []}
+    DynamicSupervisor.start_child(__MODULE__, spec)
   end
 end

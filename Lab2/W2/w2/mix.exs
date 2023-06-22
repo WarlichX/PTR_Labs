@@ -7,7 +7,8 @@ defmodule W2.MixProject do
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      config_path: "config/config.exs"
     ]
   end
 
@@ -23,7 +24,8 @@ defmodule W2.MixProject do
     [
       {:httpoison, "~> 1.8"},
       {:gun, "~> 1.3"},
-      {:poolboy, "~> 1.5"}
+      {:poolboy, "~> 1.5"},
+      {:mint, "~> 1.0"}
     ]
   end
 end
