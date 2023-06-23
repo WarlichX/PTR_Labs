@@ -3,7 +3,7 @@ defmodule W2.MixProject do
 
   def project do
     [
-      app: :w2,
+      app: :my_app,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,

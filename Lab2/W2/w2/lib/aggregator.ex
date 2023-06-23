@@ -16,9 +16,9 @@ defmodule Aggregator do
 
     if length(new_tweets) >= 10 do
       Batcher.handle_cast({:add_batch, new_tweets, new_sentiment_scores, new_engagement_ratios}, state)
-      new_tweets = []
-      new_sentiment_scores = []
-      new_engagement_ratios = []
+      _new_tweets = []
+      _new_sentiment_scores = []
+      _new_engagement_ratios = []
     end
 
     {:noreply, %{state | tweets: new_tweets, sentiment_scores: new_sentiment_scores, engagement_ratios: new_engagement_ratios}}
